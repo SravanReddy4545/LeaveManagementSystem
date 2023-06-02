@@ -91,28 +91,6 @@ public class AdminController {
     @RequestMapping(value = "/user/manage-users/save-user-edit", method = RequestMethod.POST)
     public ModelAndView saveUserEdit(ModelAndView mav, @Valid UserInfo userInfo, BindingResult bindResult) {
 
-	/*User userExists = userService.findUserByEmail(user.getEmail());
-	User updateUser = userService.getUserById(user.getId());
-
-	if (userExists != null && !user.getEmail().equals(updateUser.getEmail())) {
-	    bindResult.rejectValue("email", "error.user", "User already exists with Email id");
-	}
-
-	if (bindResult.hasErrors()) {
-	    mav.addObject("errorField", bindResult.getFieldError().getField());
-	    mav.addObject("errorMessage", bindResult.getFieldError().getDefaultMessage());
-	    mav.setView(new RedirectView("/docs-app/admin/manage-users/edit/" + user.getId() + ""));
-	} else {
-	    updateUser.setName(user.getName());
-	    updateUser.setLastName(user.getLastName());
-	    updateUser.setEmail(user.getEmail());
-	    updateUser.setPassword(user.getPassword());
-	    updateUser.setRole(user.getRole());
-	    userService.saveUser(updateUser);
-	    mav.addObject("successMessage", "User Details updated successfully!!");
-	    mav.setView(new RedirectView("/docs-app/admin/manage-users"));
-	}
-*/
 	return mav;
     }
 

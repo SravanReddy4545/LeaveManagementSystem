@@ -18,13 +18,6 @@ import com.lms.models.UserInfo;
 import com.lms.service.LeaveManageService;
 import com.lms.service.UserInfoService;
 
-/**
- * This controller will provide the basic operations fo users. Like
- * signing-in,registering a new user.
- * 
- * @author navinkumark
- *
- */
 @Controller
 public class LoginController {
 
@@ -34,12 +27,6 @@ public class LoginController {
     @Autowired
     LeaveManageService leaveManageService;
 
-    /**
-     * This method opens up the login page if user is not authenticated
-     * otherwise redirects the user to user home page.
-     * 
-     * @return
-     */
     @RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
     public ModelAndView login(ModelAndView mav) {
 
@@ -55,11 +42,6 @@ public class LoginController {
 	return mav;
     }
 
-    /**
-     * Opens the registration page to register a new user.
-     * 
-     * @return ModelAndView
-     */
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public ModelAndView registration(ModelAndView mav) {
 
@@ -69,14 +51,6 @@ public class LoginController {
 	return mav;
     }
 
-    /**
-     * Gets the form input from registration page and adds the user to the
-     * database.
-     * 
-     * @param user
-     * @param bindResult
-     * @return ModelAndView
-     */
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(ModelAndView mav, @Valid UserInfo userInfo, BindingResult bindResult) {
 
@@ -97,13 +71,6 @@ public class LoginController {
 	return mav;
     }
 
-    /**
-     * Shows the admin page after user authentication is done.
-     * 
-     * @param request
-     * @return ModelAndView
-     * @throws JSONException
-     */
     @RequestMapping(value = "/user/home", method = RequestMethod.GET)
     public ModelAndView home(ModelAndView mav, HttpServletRequest request) throws Exception {
 
